@@ -1,0 +1,27 @@
+.nv{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+
+}
+.nv1{
+    color: gold;
+    padding-left: 2em;
+
+
+}
+.nv2 > a{
+    margin: 19px;
+    color: goldenrod;
+    
+}
+.nv2{
+    padding-top: 14px;
+}
+.nv2 > a:hover{
+    color: white;
+}

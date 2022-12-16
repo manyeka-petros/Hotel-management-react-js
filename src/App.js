@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router,Routes ,Route } from "react-router-dom";
+import Contacts from "./Contacts";
+import Messag from "./Messag";
+
+import Navbar from "./Navbar";
+import SignUp from "./SignUp";
+
+import Visito from "./Visito";
+import "bootstrap/dist/css/bootstrap.min.css";
+import FileUpload from "./FileUpload";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+    <Navbar/>
+      <Routes>
+        <Route path="/Vistor" element= {<Visito/>}/>
+        <Route path="/Signup" element= {<SignUp/>}/>
+        <Route path="/Addroom" element= {<FileUpload/>}/>
+        <Route path="/Contact" element = {<Contacts/>}/>
+        <Route path="/Message" element = {<Messag/>}/>
+      </Routes>
+
+    </Router>
     </div>
   );
 }
