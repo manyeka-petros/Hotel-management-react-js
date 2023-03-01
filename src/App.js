@@ -8,6 +8,7 @@ import SignUp from "./SignUp";
 import Visito from "./Visito";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FileUpload from "./FileUpload";
+import Home from "./Home";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Router>
     <Navbar/>
       <Routes>
+        <Route path="" element= {<Home/>}/>
         <Route path="/Vistor" element= {<Visito/>}/>
         <Route path="/Signup" element= {<SignUp/>}/>
         <Route path="/Addroom" element= {<FileUpload/>}/>

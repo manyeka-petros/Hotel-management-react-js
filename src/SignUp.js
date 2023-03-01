@@ -1,4 +1,4 @@
-
+import './SignUp.css'
 
 
 import axios from 'axios';
@@ -26,8 +26,12 @@ const SignUp = () => {
         nav("/Vistor")
     }
   return (
-    <div>
-        <div>
+    <div className='top1'>
+
+        <div className='top2'>
+
+       
+        <div className='hdt'>
             <h>Sign up</h>
         </div>
         <div>
@@ -77,10 +81,11 @@ const SignUp = () => {
                 onChange = {onInput}
                 />
                 </div>
-                <div>
+                <div className='bt1'>
                     <button type='submit'>submit</button>
                 </div>
             </form>
+        </div>
         </div>
     </div>
   )
