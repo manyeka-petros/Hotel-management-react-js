@@ -1,5 +1,5 @@
 import { BrowserRouter as Router,Routes ,Route } from "react-router-dom";
-import Contacts from "./Contacts";
+
 import Messag from "./Messag";
 
 import Navbar from "./Navbar";
@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import FileUpload from "./FileUpload";
 import Home from "./Home";
 import Admin from "./Admin";
+import ContactUs from "./ContactUs";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="/Vistor" element= {<Visito/>}/>
         
         <Route path="/addroom" element= {<FileUpload/>}/>
-        <Route path="/contact" element = {<Contacts/>}/>
+        <Route path="/contact" element = {<ContactUs/>}/>
         <Route path="/message" element = {<Messag/>}/>
       </Routes>
       </Admin>
