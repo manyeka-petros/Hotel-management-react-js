@@ -1,7 +1,8 @@
 
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import AuthContext from '../Contex/AuthProvider';
+import Admin from './Admin';
+import AuthContext from './Contex/AuthProvider';
 import './SignIn.css'
 
 const SignIn = () => {
@@ -57,6 +58,9 @@ const SignIn = () => {
         success ? (
             <section>
                 <h3>You are logged in</h3>
+                <Admin>
+                    
+                </Admin>
             </section>
         ):(
 

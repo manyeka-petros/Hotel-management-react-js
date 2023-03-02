@@ -11,30 +11,24 @@ import FileUpload from "./FileUpload";
 import Home from "./Home";
 import Admin from "./Admin";
 import ContactUs from "./ContactUs";
+import SignIn from "./SignIn";
 
 
 function App() {
   return (
     <div>
       <Router>
-        <Navbar>
-          
-          <Route path="" element= {<Home/>}/>
-          <Route path="/Signup" element= {<SignUp/>}/>
-          
-
-        </Navbar>
-    
-    <Admin>
+      <Navbar/>
       <Routes>
         
         <Route path="/Vistor" element= {<Visito/>}/>
-        
+        <Route path="/Home" element= {<Home/>}/>
+        <Route path="/Signin" element= {<SignIn/>}/>
         <Route path="/addroom" element= {<FileUpload/>}/>
         <Route path="/contact" element = {<ContactUs/>}/>
         <Route path="/message" element = {<Messag/>}/>
       </Routes>
-      </Admin>
+      
 
     </Router>
     </div>
