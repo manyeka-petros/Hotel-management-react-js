@@ -1,47 +1,60 @@
+import './Admin.css'
 
+import React, { Children } from 'react'
+import { NavLink } from 'react-router-dom'
 
-import React from 'react'
-
-const Admin = () => {
+const Admin = ({children}) => {
     const itemsInBars = [
         {
-            componet:"ViewRomm",
-            pathname:'/viewRoom',
-            icons:'ico'
+            componet:"ADD ROOM",
+            pathname:'/addroom',
+            icons:''
         },
         {
-            componet:"ViewRomm",
+            componet:"VIEW ROOM",
             pathname:'/viewRoom',
-            icons:'ico'
+            icons:''
         },
         {
-            componet:"ViewRomm",
-            pathname:'/viewRoom',
-            icons:'ico'
+            componet:"VIEW MESSAGE",
+            pathname:'/message',
+            icons:''
         },
         {
-            componet:"ViewRomm",
+            componet:"AVAILABLE ROOM",
             pathname:'/viewRoom',
-            icons:'ico'
+            icons:''
         },{
-            componet:"ViewRomm",
-            pathname:'/viewRoom',
-            icons:'ico'
+            componet:"ROOM BOOKINGS",
+            pathname:'/contact',
+            icons:''
         },
         {
-            componet:"ViewRomm",
+            componet:"LOGOUT",
             pathname:'/viewRoom',
-            icons:'ico'
+            icons:''
         }
 
     ]
   return (
-    <div>
-        <div>
+    <div className='side'>
+        <div className='sideItem'>
             {
-                itemsInBars.map((item,index))
+                itemsInBars.map((item,index) =>(
+                    <NavLink to={item.pathname} key ={index} className='links'>
+                        <div>{item.icons}</div>
+                        <div className='comp'>{item.componet}</div>
+
+                    </NavLink>
+                )
+                )
             }
 
+        </div>
+        <div>
+            <main>
+            {children}
+            </main>
         </div>
     </div>
   )

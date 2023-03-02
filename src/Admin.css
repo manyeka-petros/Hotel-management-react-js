@@ -1,0 +1,41 @@
+.side{
+    display: flex;
+    width: 280px;
+    height: 90vh;
+   
+    color: white;
+
+}
+
+main{
+    
+    height: 100vh;
+    width: 1000px;
+    
+}
+.comp{
+    margin: 0.7rem;
+    font-family: serif;
+}
+.sideItem{
+    background-color: darkslateblue;
+    color: white;
+    height: 100vh;
+    width: 280px;
+    
+    
+}
+
+.links{
+    display: flex;
+    color: white;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+.links:hover{
+    background-color: black;
+    color: gold;
+
+}

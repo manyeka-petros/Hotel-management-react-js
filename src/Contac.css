@@ -1,0 +1,37 @@
+.cont1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: rebeccapurple;
+    position: relative;
+    color: #fff;
+    
+}
+.cont2{
+    text-align: center;
+    margin-top: 1.2rem;
+}
+.cont3{
+ display: flex;
+   
+   justify-items: center;
+   width: 100%;
+   margin-top: 2rem;
+}
+.con4 >button{
+    padding: 12px 20px;
+    width: 96%;
+    background: rgb(46, 110, 38);
+
+}
+.con1{
+    margin: 2em;
+    width: 60%;
+}
+.con2{
+    width: 60%;
+    background: violet;
+    padding: 1rem;
+    border-radius: 10px;
+}

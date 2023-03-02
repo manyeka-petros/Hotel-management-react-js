@@ -9,21 +9,31 @@ import Visito from "./Visito";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FileUpload from "./FileUpload";
 import Home from "./Home";
+import Admin from "./Admin";
 
 
 function App() {
   return (
     <div>
       <Router>
-    <Navbar/>
+        <Navbar>
+          
+          <Route path="" element= {<Home/>}/>
+          <Route path="/Signup" element= {<SignUp/>}/>
+          
+
+        </Navbar>
+    
+    <Admin>
       <Routes>
-        <Route path="" element= {<Home/>}/>
+        
         <Route path="/Vistor" element= {<Visito/>}/>
-        <Route path="/Signup" element= {<SignUp/>}/>
-        <Route path="/Addroom" element= {<FileUpload/>}/>
-        <Route path="/Contact" element = {<Contacts/>}/>
-        <Route path="/Message" element = {<Messag/>}/>
+        
+        <Route path="/addroom" element= {<FileUpload/>}/>
+        <Route path="/contact" element = {<Contacts/>}/>
+        <Route path="/message" element = {<Messag/>}/>
       </Routes>
+      </Admin>
 
     </Router>
     </div>
