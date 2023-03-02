@@ -14,7 +14,7 @@ const Downlo = () => {
   }
   return (
     <div className="mv">
-             <h1 className="text-center text-primary mt-3"> Files</h1>
+             <h1 className="text-center text-primary mt-3"> BOOK YOUR ROOM NOW</h1>
             <div className="container " id="cont">
 
                         {

@@ -7,13 +7,16 @@
     color: blue;
 }
 .upili{
-    margin: 2em;
+    margin: 1em;
     border: 2px solid blue;
     width: 400px;
-    height: 200px;
+    height: 320px;
     padding:6px;
     justify-content: center;
     align-items: center;
     justify-items: center;
     padding-top: 3rem;
+}
+.fil{
+    margin-top: 0.6rem;
 }

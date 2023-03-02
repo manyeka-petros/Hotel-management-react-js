@@ -7,11 +7,14 @@ import SignUp from "./SignUp";
 
 import Visito from "./Visito";
 import "bootstrap/dist/css/bootstrap.min.css";
-import FileUpload from "./FileUpload";
+
 import Home from "./Home";
 import Admin from "./Admin";
 import ContactUs from "./ContactUs";
 import SignIn from "./SignIn";
+import Uplod from "./Uplod";
+import Downlo from "./Downlo";
+import BookRoom from "./BookRoom";
 
 
 function App() {
@@ -22,11 +25,13 @@ function App() {
       <Routes>
         
         <Route path="/Vistor" element= {<Visito/>}/>
+        <Route path="/bookroom" element= {<BookRoom/>}/>
         <Route path="/Home" element= {<Home/>}/>
         <Route path="/Signin" element= {<SignIn/>}/>
-        <Route path="/addroom" element= {<FileUpload/>}/>
+        <Route path="/addroom" element= {<Uplod/>}/>
         <Route path="/contact" element = {<ContactUs/>}/>
         <Route path="/message" element = {<Messag/>}/>
+        <Route path="/available" element = {<Downlo/>}/>
       </Routes>
       
 

@@ -24,19 +24,12 @@ const Uplod = () => {
   return (
     <div className='upl'>
         <div className='upi'>
-            <h2 className='txt txt-primary'>Uploading files</h2>
+            <h2 className='txt txt-primary'>ADD ROOMS</h2>
         </div>
         <div className='upili'>
-           
-          
-          <input
-            type='file'
-            name='file_upload'
-            onChange={(e)=>handleFiles(e)} 
-            />
-            <button className='btn btn-success' type='button' onClick={()=>sub()}>submit</button>
-            <div>
-                        <label>category</label>
+          <div>
+          <div>
+                        <label>Room Type</label>
                         <select className="form-control" name="category" value={category} 
                         onChange={(e)=>setCategory(e.target.value)}>
                             <option >Select Type</option>
@@ -48,6 +41,33 @@ const Uplod = () => {
                         </select>
                         
                     </div>
+          </div>
+          <div>
+            <label>Cost</label>
+            <input
+            name=''
+            className="form-control"
+            placeholder='Cost'
+            />
+          </div>
+          <div>
+            <label>Number of Room</label>
+            <input
+            name=''
+            className="form-control"
+            placeholder='Number of Rooms'
+            />
+          </div>
+           
+          <label>Room Image</label>
+          <input
+          className='fil'
+            type='file'
+            name='file_upload'
+            onChange={(e)=>handleFiles(e)} 
+            />
+            <button className='btn btn-success' type='button' onClick={()=>sub()}>submit</button>
+            
          
         </div>
         <div>

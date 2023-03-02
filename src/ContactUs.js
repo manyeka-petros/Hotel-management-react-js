@@ -57,7 +57,7 @@ const ContactUs = () => {
                     </div>
                     <div>
                         <label>Your message</label>
-                        <input
+                        <textarea
                         type='text'
                         name='username'
                         placeholder='Username'

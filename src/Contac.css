@@ -22,7 +22,8 @@
 .con4 >button{
     padding: 12px 20px;
     width: 96%;
-    background: rgb(46, 110, 38);
+    background: blue;
+    border-radius: 12px;
 
 }
 .con1{
