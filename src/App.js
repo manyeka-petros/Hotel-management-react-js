@@ -15,13 +15,17 @@ import SignIn from "./SignIn";
 import Uplod from "./Uplod";
 import Downlo from "./Downlo";
 import BookRoom from "./BookRoom";
+import Available from "./Available";
+import Bookings from "./Bookings";
 
 
 function App() {
   return (
     <div>
       <Router>
-      <Navbar/>
+        <Navbar/>
+       
+      
       <Routes>
         
         <Route path="/Vistor" element= {<Visito/>}/>
@@ -31,8 +35,15 @@ function App() {
         <Route path="/addroom" element= {<Uplod/>}/>
         <Route path="/contact" element = {<ContactUs/>}/>
         <Route path="/message" element = {<Messag/>}/>
-        <Route path="/available" element = {<Downlo/>}/>
+        <Route path="/signup" element = {<SignUp/>}/>
+        <Route path="/available" element = {<Available/>}/>
+        <Route path="/bookings" element = {<Bookings/>}/>
+        <Route path="/message" element = {<Messag/>}/>
+        
       </Routes>
+     
+      
+      
       
 
     </Router>

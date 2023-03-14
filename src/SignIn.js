@@ -1,122 +1,154 @@
 
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Route, Router, Routes } from 'react-router-dom';
 import Admin from './Admin';
+import Available from './Available';
+import Bookings from './Bookings';
 import AuthContext from './Contex/AuthProvider';
+import Messag from './Messag';
+import Navbar from './Navbar';
 import './SignIn.css'
 
 const SignIn = () => {
     const userRef = useRef()
     const errRef = useRef()
-    const[errMsg,setErrMsg] = useState('')
-    const[success,setSuccess] = useState(false)
-    const[email,setEmail] = useState('')
-    const[password,setPassword] = useState('')
-    const{setAuth} = useContext(AuthContext)
-    useEffect(()=>{
-       
-    },[])
-    useEffect(()=>{
+    const [errMsg, setErrMsg] = useState('')
+    const [success, setSuccess] = useState(false)
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const { setAuth } = useContext(AuthContext)
+    useEffect(() => {
+        userRef.current.focus()
+    }, [])
+    useEffect(() => {
         setErrMsg('')
-    },[email,password])
-   
-    
-    const sign = async(event)=>{
-        try{
-            const respon = await axios.post("http://localhost:8080/logins",
-            JSON.stringify({email,password}),{
-                headers:{"Content-Type":"applicatio/json"},
-                withCredentials: true
+    }, [username, password])
+
+
+    const sign = async (e) => {
+        e.preventDefault()
+        console.log(username, password)
+        try {
+
+            const respon = await axios.post("http://localhost:8080/log",
+                { username, password }, {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: false
             })
-            console.log(JSON.stringify(respon?.data ))
-            const accessToken = respon.data?.accessToken;
-            setAuth({email,password,accessToken})
-            console.log(JSON.stringify( ))
-            setEmail('')
+
+
+            setAuth({ username, password })
+
+            setUsername('')
             setPassword('')
             setSuccess(true)
-        }catch(error){
-            if(!error.respon){
+
+        } catch (error) {
+            if (!error.respon) {
                 setErrMsg('No server respond')
 
             }
-            else if(error.respon?.status == 400){
+            else if (error.respon?.status === 400) {
                 setErrMsg('missing username or password')
             }
-            else if(error.respon?.status == 401){
+            else if (error.respon?.status === 401) {
                 setErrMsg('unauthorised')
             }
-            else{
+            else {
                 setErrMsg('Login failed')
             }
-            
+
         }
     }
-  return (
-    <>
-    {
-        success ? (
-            <section>
-                <h3>You are logged in</h3>
-                <Admin>
-                    
-                </Admin>
-            </section>
-        ):(
+    return (
+        <>
+            {
+                success ? (
+                    <section>
+                      <Admin/>
 
-       
-   
-    <div className='sig1 p-3'>
-        
-        <div className=''>
-            <div className='wrapp'>
-            <div>
-            <p ref={errRef} className={errMsg ? "errmsg":"offscreen"
-       } aria-live ='assertive'>{errMsg}</p>
-        </div>
-          
-        <div>
-            <h2 className='text-center text-primary'>Sign In</h2>
-        </div>
-        <div>
-            <form onSubmit={sign}>
-                <div>
-                <label>Username</label>
-                <input
-                type= "text"
-                placeholder='Enter Username'
-                name='username'
-                required
-                autoComplete='off'
-                onChange={(e)=>setEmail(e.target.value)}
+                    </section>
+                ) : (
 
-                />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input
-                    type='text'
-                    placeholder=' Passwor'
-                    name='password'
-                    required
-                    autoComplete='off'
-                    onChange={(e)=>setPassword(e.target.value)}
-                    
-                    />
-                </div>
-                <div className='text-center pt-1 bt'>
-                    <button className='btn btn-primary text text-center ' type='submit'>submit</button>
-                </div>
-            </form>
-        </div>
-              
-        </div>
-        </div>
-    </div>
-     )
-    }
-    </>
-  )
+
+
+                    <div >
+                        <div>
+                            <img src='ht.jpg' className='nt' />
+                        </div>
+                        <div className='bl'>
+
+
+                            <div className='sig1  p-3 cps container' style={{ backgroundImage: "url(/rm3.jpg)", backgroundRepeat: 'no-repeat', backgroundSize: "contain" }}
+                            >
+                                <div>
+                                    <img src='sc.jpg' className='sd' />
+                                </div>
+                                <div className='wrapp'>
+                                    <div>
+                                        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"
+                                        } aria-live='assertive'>{errMsg}</p>
+                                    </div>
+
+                                    <div>
+                                        <h2 className='text-center text-primary'>Sign In</h2>
+                                    </div>
+                                    <div>
+                                        <form onSubmit={sign}>
+                                            <div>
+                                                <label>Username</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder='Enter Username'
+                                                    name='username'
+                                                    value={username}
+                                                    required
+                                                    ref={userRef}
+                                                    autoComplete='off'
+                                                    onChange={(e) => setUsername(e.target.value)}
+
+                                                />
+                                            </div>
+                                            <div>
+                                                <label>Password</label>
+                                                <input
+                                                    type='password'
+                                                    placeholder=' Password'
+                                                    name='password'
+                                                    value={password}
+                                                    required
+
+                                                    onChange={(e) => setPassword(e.target.value)}
+
+                                                />
+                                            </div>
+                                            <div className='text-center pt-1 bt'>
+                                                <button className='btn btn-primary text text-center ' type='submit'>submit</button>
+                                            </div>
+                                            <div
+
+                                            >
+
+                                            </div>
+                                        </form>
+
+                                        <p>
+                                            Need an account <br />
+                                            <span>
+                                                <a href='#'>  Sign Up</a>
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </>
+    )
 }
 
 export default SignIn

@@ -1,10 +1,25 @@
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import './Contac.css'
 import { FaAddressBook, FaPhoneAlt, FaVoicemail } from "react-icons/fa";
+import axios from 'axios';
 
 const ContactUs = () => {
+    
+    const[conta,setConta] = useState({
+        username:'',
+        email:'',
+        message:''
+    })
+    const{username,email,message} = conta
+    const handle = (e)=>{
+        setConta({...conta,[e.target.name]:e.target.value})
+    }
+    const sends = async(e)=>{
+        console.log(email ,message , username)
+        await axios.post("http://localhost:8080/sa",conta)
+    }
   return (
     <div className='cont1'>
         <div>
@@ -34,14 +49,16 @@ const ContactUs = () => {
                     <h2>Send Massape</h2>
                     </div>
 
-                    <form>
+                    <form onSubmit={sends}>
                     <div>
                         <label>Full Name</label>
                         <input
                         type='text'
                         name='username'
                         placeholder='Username'
+                        value={username}
                         autoComplete='off'
+                        onChange={handle}
                         required
                         />
                     </div>
@@ -49,9 +66,12 @@ const ContactUs = () => {
                         <label>email</label>
                         <input
                         type='text'
-                        name='username'
-                        placeholder='Username'
+                        name='email'
+                        value={email}
+                        placeholder='Email'
+                        onChange={handle}
                         autoComplete='off'
+
                         required
                         />
                     </div>
@@ -59,14 +79,16 @@ const ContactUs = () => {
                         <label>Your message</label>
                         <textarea
                         type='text'
-                        name='username'
+                        name='message'
+                        value={message}
                         placeholder='Username'
+                        onChange={handle}
                         autoComplete='off'
                         required
                         />
                     </div>
                    <div className='con4'>
-                   <button>Send</button>
+                   <button type='submit' className='btn btn-primary'>Send</button>
                    </div>
                     </form>
 

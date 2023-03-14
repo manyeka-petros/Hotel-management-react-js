@@ -2,6 +2,7 @@
 
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import './Message.css'
 
 const Messag = () => {
     const[mesg,setMesg] = useState([])
@@ -10,17 +11,19 @@ const Messag = () => {
     },[])
 
     const loadMe = async()=>{
-        const resu = await axios.get("http://localhost:8080/find")
+        const resu = await axios.get("http://localhost:8080/ge")
         setMesg(resu.data)
     }
   return (
-    <div>
-        <div>
-            <h3>View the Message</h3>
+    <div className='cps container'style={{ backgroundImage: "url(/bd.jpeg)" ,backgroundRepeat: 'no-repeat',backgroundSize:"contain"}}>
+        <div className='row'> 
+            <div className='col-md-8 offset-md-2 '>
+                       <div className='hf'>
+            <h3 className='text-center hf'>View the Message</h3>
         </div>
         <div>
-            <table>
-                <thead>
+            <table className='hs table table-bordered'>
+                <thead className='tb'>
                     <th>USER NAME</th>
                     <th>EMAIL</th>
                     <th>MESSAGE</th>
@@ -38,6 +41,8 @@ const Messag = () => {
                 </tbody>
             </table>
         </div>
+    </div>
+    </div>
     </div>
   )
 }

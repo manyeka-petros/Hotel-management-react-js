@@ -1,10 +1,28 @@
 .side{
     display: flex;
     width: 280px;
-    height: 90vh;
+    height: 120vh;
    
     color: white;
 
+}
+.cps{
+    color: black;
+}
+.mvc{
+    color: black;
+}
+.car{
+   
+    height: 70px;
+    align-items: center;
+    text-align: center;
+    background: purple;
+    color: white;
+}
+td>img{
+    width: auto;
+    height: 150px;
 }
 
 main{
@@ -14,7 +32,7 @@ main{
     
 }
 .comp{
-    margin: 0.7rem;
+    margin: 0.2rem;
     font-family: serif;
 }
 .sideItem{

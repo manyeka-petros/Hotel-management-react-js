@@ -14,21 +14,29 @@ const Downlo = () => {
   }
   return (
     <div className="mv">
-             <h1 className="text-center text-primary mt-3"> BOOK YOUR ROOM NOW</h1>
+             <h1 className="text-center text-primary mt-3"> AVAILABLE ROOMS</h1>
             <div className="container " id="cont">
 
                         {
                             download.map(p =>
                                     <div className="card shadow fb" key={p.fileId
                                     } >
+                                      
                                         <div className="card-header">
-                                         FileName:   {p.filename}
+
+                                        <img className='image'  src= {p.downloadUrl}/>
+                                         
                                         </div>
-                                        <div className="card-body">
-                                           File Type: {p.filetype}
+                                        <div >
+                                           $:   {p.cost}
                                             <br />
                                             <br />
-                                            <a className='btn btn-primary' href={p.downloadUrl}>download</a>
+                                            <div className='btn btn-primary'>
+                                            {p.category}
+                                            </div>
+                                            <div>
+                                              Book Now
+                                            </div>
                                             <br />
                                         </div>
                                     </div>

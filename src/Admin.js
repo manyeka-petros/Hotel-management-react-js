@@ -1,6 +1,6 @@
 import './Admin.css'
 
-import React, { Children } from 'react'
+
 import { NavLink } from 'react-router-dom'
 
 const Admin = ({children}) => {
@@ -11,8 +11,8 @@ const Admin = ({children}) => {
             icons:''
         },
         {
-            componet:"VIEW ROOM",
-            pathname:'/viewRoom',
+            componet:"HOME",
+            pathname:'/home',
             icons:''
         },
         {
@@ -21,15 +21,32 @@ const Admin = ({children}) => {
             icons:''
         },
         {
-            componet:"AVAILABLE ROOM",
-            pathname:'/viewRoom',
-            icons:''
-        },{
             componet:"ROOM BOOKINGS",
-            pathname:'/contact',
+            pathname:'/bookroom',
             icons:''
         },
         {
+            componet:"AVAILABLE",
+            pathname:'/available',
+            icons:''
+        },{
+            componet:"BOOKINGS",
+            pathname:'/bookings',
+            icons:''
+        },{
+            componet:"SIGNUP",
+            pathname:'/signup',
+            icons:''
+        },{
+            componet:"SIGNIN",
+            pathname:'/signin',
+            icons:''
+        },
+        {
+            componet:"CONTACT US",
+            pathname:'/contact',
+            icons:''
+        },{
             componet:"LOGOUT",
             pathname:'/viewRoom',
             icons:''

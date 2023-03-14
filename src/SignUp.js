@@ -8,13 +8,13 @@ import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
     let nav = useNavigate()
     const[vistors,setVistors] = useState({
-        firstName:'',
-        lastName:'',
+        
+        username:'',
         email:'',
         password:'',
-        phoneNumber:''
+        
     })
-    const {firstName,lastName,email,password,phoneNumber} = vistors;
+    const {username,email,password} = vistors;
 
     const onInput = (e) =>{
         setVistors({...vistors,[e.target.name]:e.target.value});
@@ -22,11 +22,11 @@ const SignUp = () => {
 
     const onSubm = async(e)=>{
         e.preventDefault()
-        await axios.post("http://localhost:8080/visitor",vistors)
+        await axios.post("http://localhost:8080/save",vistors)
         nav("/Vistor")
     }
   return (
-    <div className='top1'>
+    <div className='sig1 p-3 cps container top1'style={{ backgroundImage: "url(/rm32.jpg)" ,backgroundRepeat: 'no-repeat',backgroundSize:"contain"}}>
 
         <div className='top2'>
 
@@ -36,21 +36,14 @@ const SignUp = () => {
         </div>
         <div>
             <form onSubmit= {onSubm}>
+               
                 <div>
-                <label>firstName</label>
+                <label>Username</label>
                 <input
                 type= 'text'
-                name = 'firstName'
-                value = {firstName}
-                onChange = {onInput}
-                />
-                </div>
-                <div>
-                <label>lastName</label>
-                <input
-                type= 'text'
-                name = 'lastName'
-                value = {lastName}
+                name = 'username'
+                placeholder='Enter Username'
+                value = {username}
                 onChange = {onInput}
                 />
                 </div>
@@ -58,6 +51,7 @@ const SignUp = () => {
                 <label>Email</label>
                 <input
                 type= 'text'
+                placeholder='Enter Email'
                 name = 'email'
                 value = {email}
                 onChange = {onInput}
@@ -67,20 +61,13 @@ const SignUp = () => {
                 <label>Password</label>
                 <input
                 type= 'text'
+                placeholder='Enter Password'
                 name = 'password'
                 value = {password}
                 onChange = {onInput}
                 />
                 </div>
-                <div>
-                <label>phoneNumber</label>
-                <input
-                type= 'text'
-                name = 'phoneNumber'
-                value = {phoneNumber}
-                onChange = {onInput}
-                />
-                </div>
+               
                 <div className='bt1'>
                     <button type='submit'>submit</button>
                 </div>

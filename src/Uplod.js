@@ -5,6 +5,8 @@ import {singleFileUplo}  from "./data/Api"
 const Uplod = () => {
     const[selectFile,setSelect] = useState('')
     const[category,setCategory] = useState('')
+    const[cost,setCost] = useState('')
+    const[roomNumber,setRoomNumber] = useState('')
    
     
     const handleFiles= (e)=>{
@@ -13,12 +15,19 @@ const Uplod = () => {
     }
     const sub = async()=>{
         console.log(selectFile)
+        console.log(cost)
+        console.log(roomNumber)
+        console.log(category)
         const formData = new FormData()
         formData.append('category',category)
         formData.append('file',selectFile)
+        formData.append('cost',cost)
+        formData.append('roomNumber',roomNumber)
 
 
         await singleFileUplo(formData)
+        
+        
              
     }
   return (
@@ -32,12 +41,12 @@ const Uplod = () => {
                         <label>Room Type</label>
                         <select className="form-control" name="category" value={category} 
                         onChange={(e)=>setCategory(e.target.value)}>
-                            <option >Select Type</option>
-                            <option value='Gospel'>Gospel</option>
-                            <option value='local'>Local</option>
-                            <option value='hipop'>Hipop</option>
-                            <option value='dancel'>Dancel</option>
-                            <option value='top10'>Top 10</option>
+                            <option >Room Type</option>
+                            <option value='Luxury Room'>Luxury Room</option>
+                            <option value='Delux Room'>Delux Room</option>
+                            <option value='Geust Room'>Geust Room</option>
+                            <option value='Single Room'>Single Room</option>
+                            <option value='Double Room'>double Room</option>
                         </select>
                         
                     </div>
@@ -45,17 +54,23 @@ const Uplod = () => {
           <div>
             <label>Cost</label>
             <input
-            name=''
+            type='text'
+            name='cost'
             className="form-control"
             placeholder='Cost'
+            value={cost}
+            onChange = {(e)=>setCost(e.target.value)}
             />
           </div>
           <div>
             <label>Number of Room</label>
             <input
-            name=''
+            type='text'
+            name='roomNumber'
             className="form-control"
             placeholder='Number of Rooms'
+            value={roomNumber}
+            onChange = {(e)=>setRoomNumber(e.target.value)}
             />
           </div>
            

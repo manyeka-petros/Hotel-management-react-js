@@ -1,99 +1,167 @@
- import React from 'react'
+ import axios from 'axios'
+import React, { useState } from 'react'
  import './BookRoom.css'
  
  const BookRoom = () => {
+   
+    const[userBook,setUserBook] = useState({
+        username:'',
+        email:'',
+        phoneNumber:'',
+        address:'',
+        bedType:'',
+        checkIn:'',
+        checkOut:'',
+        cost:'',
+        numbeOfRoom:'',
+        costPerRoom:''
+
+    })
+    const{username,email,phoneNumber,address,bedType,checkIn,checkOut,cost,numbeOfRoom,costPerRoom} =userBook;
+    const dataHandler = (e)=>{
+        setUserBook({...userBook,[e.target.name]:e.target.value})
+    }
+
+    const books = async(e)=>{
+        e.preventDefault()
+        
+        await axios.post("http://localhost:8080/book",userBook)
+    }
+
    return (
      <div className='htds'> 
-        <div>
-            <h2>BOOK YOUR ROOM</h2>
+        <div className='head'>
+        <h2>BOOK YOUR ROOM</h2>
         </div>
-        <div className='mais'>
+        <div >
+            <img className='im' src='../rm31.jpg'/>
+        </div>
+        <div className='mps'>
             <div>
-                <h2>Person information</h2>
-                <form>
+               
+                <form onSubmit={books} className='mais'> 
+               
+                <div >
+                <h2 className='pep'>Person information</h2>
                     <div>
                         <label>Name</label>
                         <input
-                        name=''
-                        type= ''
+                        name='username'
+                        placeholder='Name'
+                        type= 'text'
+                        value={username}
+                        onChange={dataHandler}
                         />
                     </div>
                     
                     <div>
                         <label>Email</label>
                         <input
-                        name=''
-                        type= ''
+                        name='email'
+                        type= 'text'
+                        value={email}
+                        onChange = {dataHandler}
+                        placeholder = 'Email'
                         />
                     </div>
                     <div>
                         <label>Phone Number</label>
                         <input
-                        name=''
-                        type= ''
+                        name='phoneNumber'
+                        placeholder='Password'
+                        type= 'text'
+                        value={phoneNumber}
+                        onChange = {dataHandler}
                         />
                     </div>
                     <div>
                         <label>Address</label>
                         <input
-                        name=''
-                        type= ''
+                        name='address'
+                        placeholder='Address'
+                        type= 'text'
+                        value={address}
+                        onChange = {dataHandler}
                         />
                     </div>
                     <div>
                         <label>Bedding Type</label>
                         <input
-                        name=''
-                        type= ''
+                        name='bedType'
+                        placeholder='BedType'
+                        type= 'text'
+                        value={bedType}
+                        onChange = {dataHandler}
                         />
                     </div>
-                </form>
-            </div>
-            <div>
-                <h2>Bookings Information</h2>
-                <form>
+                    </div>
+                    <div>
+                    <div>
+    
+                <h2 className='pep'>Bookings Information</h2>
+                
                 <div>
                <label>Cost Per Room</label>
                      <input
-                     name=''
-                      type= ''
+                     name='costPerRoom'
+                     placeholder='CostPerRoom'
+                      type= 'text'
+                      value={costPerRoom}
+                      onChange = {dataHandler}
                         />
                     </div>
                     <div>
                         <label>No Of Room</label>
                         <input
-                        name=''
-                        type= ''
+                        name='numbeOfRoom'
+                        placeholder='Number Of Room'
+                        type= 'text'
+                        value={numbeOfRoom}
+                        onChange = {dataHandler}
+                        />
+                    </div>
+                    
+                    <div>
+                        <label>Check In</label>
+                        <input
+                        name='checkIn'
+                        placeholder='Check In'
+                        type= 'date'
+                        value={checkIn}
+                        onChange = {dataHandler}
                         />
                     </div>
                     <div>
                         <label>Check Out</label>
                         <input
-                        name=''
-                        type= ''
-                        />
-                    </div>
-                    <div>
-                        <label>Check In</label>
-                        <input
-                        name=''
-                        type= ''
+                        name='checkOut'
+                        placeholder='Check Out'
+                        type= 'date'
+                        value={checkOut}
+                        onChange = {dataHandler}
                         />
                     </div>
                     <div>
                         <label>Total Cost</label>
                         <input
-                        name=''
-                        type= ''
+                        name='cost'
+                        placeholder='Cost'
+                        type= 'text'
+                        value={cost}
+                        onChange = {dataHandler}
                         />
                     </div>
 
                     <div>
-                        <button>Book</button>
+                        <button type='submit' className='btn btn-primary'>Submit</button>
                     </div>
 
+               
+            </div>
+            </div>
                 </form>
             </div>
+            
         </div>
      </div>
    )
