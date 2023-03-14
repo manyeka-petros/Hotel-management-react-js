@@ -1,0 +1,15 @@
+.mgt{
+    color: black;
+}
+.taf{
+    background: black;
+    color: white;
+    
+}
+.taf > th{
+    margin: 1px;
+}
+.pep{
+    padding: 1rem;
+    color: blue;
+}
