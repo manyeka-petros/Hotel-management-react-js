@@ -31,17 +31,17 @@ const Uplod = () => {
              
     }
   return (
-    <div className='upl'>
-        <div className='upi'>
+    <div className='ups'>
+        <div className='upl'>
             <h2 className='txt txt-primary'>ADD ROOMS</h2>
         </div>
+      
         <div className='upili'>
           <div>
           <div>
                         <label>Room Type</label>
                         <select className="form-control" name="category" value={category} 
                         onChange={(e)=>setCategory(e.target.value)}>
-                            <option >Room Type</option>
                             <option value='Luxury Room'>Luxury Room</option>
                             <option value='Delux Room'>Delux Room</option>
                             <option value='Geust Room'>Geust Room</option>
@@ -86,7 +86,10 @@ const Uplod = () => {
          
         </div>
         <div>
-        
+          <div className='sv'>
+            <img src='sv1.svg'/>
+          </div>
+         
         </div>
         
     </div>

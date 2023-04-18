@@ -1,14 +1,24 @@
-.upl{
-    margin: 2em;
-    padding-left: 1rem;
+.ups{
+    margin: 0;
+   width: 100%;
+   height: 100vh;
+   padding-left: 3rem;
+  
+    background-color: rgb(20,40,70);
 }
-.upi{
-    margin: 2em;
-    color: blue;
+.sv1 > img{
+    width: 600px;
+    height: auto;
+}
+.upl{
+   padding: 2rem;
+    color: #fff;
+    font-family: serif;
 }
 .upili{
+    color: #fff;
     margin: 1em;
-    border: 2px solid blue;
+    border: 2px solid rgb(11, 110, 44);
     width: 400px;
     height: 320px;
     padding:6px;
@@ -19,4 +29,12 @@
 }
 .fil{
     margin-top: 0.6rem;
+}
+.sv{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+.sv > img{
+    width: 500px;
 }

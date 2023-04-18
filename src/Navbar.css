@@ -11,10 +11,20 @@
 }
 .nv1{
     color: gold;
-    padding-top: 8px;
+    text-align: center;
+    align-items: center;
     padding-left: 2em;
+    font-family: serif;
+    font-weight: bolder;
+    display: flex;
 
 
+}
+
+.nv1 >img{
+    width: 70px;
+    height: 60px;
+    margin-left: 1rem;
 }
 .nv2 > a{
     

@@ -3,7 +3,7 @@
     justify-content: center;
     width: 100%;
     min-height: 100vh;
-    background: rebeccapurple;
+    background: rgb(6, 48, 9);
     position: relative;
     color: #fff;
     
@@ -32,7 +32,7 @@
 }
 .con2{
     width: 60%;
-    background: violet;
+    background: rgb(93, 20, 100);
     padding: 1rem;
     border-radius: 10px;
 }

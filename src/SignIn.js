@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Route, Router, Routes } from 'react-router-dom';
+import { Link, Route, Router, Routes } from 'react-router-dom';
 import Admin from './Admin';
 import Available from './Available';
 import Bookings from './Bookings';
@@ -62,7 +62,7 @@ const SignIn = () => {
         }
     }
     return (
-        <>
+        < >
             {
                 success ? (
                     <section>
@@ -73,17 +73,17 @@ const SignIn = () => {
 
 
 
-                    <div >
+                    <div className='cf'>
                         <div>
-                            <img src='ht.jpg' className='nt' />
+                            
                         </div>
                         <div className='bl'>
 
 
-                            <div className='sig1  p-3 cps container' style={{ backgroundImage: "url(/rm3.jpg)", backgroundRepeat: 'no-repeat', backgroundSize: "contain" }}
+                            <div className='sig1  p-3 cps container' style={{ backgroundImage: "url(/lk4.jpg)", backgroundRepeat: 'no-repeat', backgroundSize: "contain",width:"100%" }}
                             >
                                 <div>
-                                    <img src='sc.jpg' className='sd' />
+                                    <img src='sc.jpeg' className='sd' />
                                 </div>
                                 <div className='wrapp'>
                                     <div>
@@ -136,7 +136,8 @@ const SignIn = () => {
                                         <p>
                                             Need an account <br />
                                             <span>
-                                                <a href='#'>  Sign Up</a>
+                                                <Link to={"/signup"}>Sign Up</Link>
+                                              
                                             </span>
                                         </p>
                                     </div>

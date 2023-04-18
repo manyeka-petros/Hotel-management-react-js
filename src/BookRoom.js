@@ -30,18 +30,22 @@ import React, { useState } from 'react'
 
    return (
      <div className='htds'> 
+        
+        <div >
+            <img className='im' src='../lk.jpg'/>
+        </div>
         <div className='head'>
         <h2>BOOK YOUR ROOM</h2>
         </div>
-        <div >
-            <img className='im' src='../rm31.jpg'/>
+        <div className='sk'>
+            <img src='../vt2.jpeg'/>
         </div>
         <div className='mps'>
             <div>
                
                 <form onSubmit={books} className='mais'> 
                
-                <div >
+                <div className='vut'>
                 <h2 className='pep'>Person information</h2>
                     <div>
                         <label>Name</label>
@@ -95,7 +99,7 @@ import React, { useState } from 'react'
                         />
                     </div>
                     </div>
-                    <div>
+                    <div className='vit'>
                     <div>
     
                 <h2 className='pep'>Bookings Information</h2>

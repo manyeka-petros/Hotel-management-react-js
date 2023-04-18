@@ -23,9 +23,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar/>
-       
-      
+       <Navbar/>
       <Routes>
         
         <Route path="/Vistor" element= {<Visito/>}/>
@@ -41,10 +39,8 @@ function App() {
         <Route path="/message" element = {<Messag/>}/>
         
       </Routes>
+      
      
-      
-      
-      
 
     </Router>
     </div>
